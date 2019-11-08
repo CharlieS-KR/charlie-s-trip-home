@@ -21,16 +21,14 @@ class Countdown extends Component {
 
     render() {
         return (
-            <div style={{ marginTop: '80px' }}>
-                <Box>
-                    <h2>{this.state.daysLeft} Days Left!</h2>
-                    <div style={{ marginTop: "40px" }}>
-                        <Button style={{ marginLeft: '10px' }} variant="contained">Food to Make</Button>
-                        <Button style={{ marginLeft: '10px' }} variant="contained">Places to Eat</Button>
-                        <Button style={{ marginLeft: '10px' }} variant="contained">People to See</Button>
-                        <Button style={{ marginLeft: '10px' }} variant="contained">Things to Do</Button>
-                    </div>
-                </Box>
+            <div style={{ marginTop: '20vh' }}>
+                <h2>{this.state.daysLeft} Days Left!</h2>
+                {/* <div style={{ marginTop: "40px" }}>
+                    <Button variant="contained">Food to Make</Button>
+                    <Button variant="contained">Places to Eat</Button>
+                    <Button variant="contained">People to See</Button>
+                    <Button variant="contained">Things to Do</Button>
+                </div> */}
             </div>
         );
     };
