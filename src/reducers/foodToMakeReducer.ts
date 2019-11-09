@@ -6,6 +6,16 @@ const initialState: items[] = [
         title: 'Chili Spaghetti',
         description: 'Got to make this Cincy classic vegie-friendly!',
         createdBy: 'Charlie'
+    },
+    {
+        title: 'Stroganoff',
+        description: 'Always a hit',
+        createdBy: 'Charlie'
+    },
+    {
+        title: 'Eggplant Parm',
+        description: 'Getting this from Buca',
+        createdBy: 'Charlie'
     }
 ];
 

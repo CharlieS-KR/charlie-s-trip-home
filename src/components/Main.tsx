@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import Countdown from './Countdown';
-import CardContainer from './CardContainer';
+import CardContainer from './CardContainer.jsx';
 import '../styles/Main.css';
-import { Route } from 'react-router-dom';
 
 import {
     Paper,

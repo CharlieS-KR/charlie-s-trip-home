@@ -3,7 +3,7 @@ import foodToMakeReducer from './foodToMakeReducer';
 
 
 const rootReducer = combineReducers({
-    foodToMake: foodToMakeReducer
+    food: foodToMakeReducer
 });
 
 const store = createStore(rootReducer);
