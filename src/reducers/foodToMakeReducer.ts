@@ -21,6 +21,9 @@ const initialState: items[] = [
 
 function foodToMake(state = initialState, action: actions) {
     switch (action.type) {
+        case 'ADD_ITEM':
+            const newState = Object.assign({}, state);
+            console.log('newState', newState);
         default:
             return state;
     }

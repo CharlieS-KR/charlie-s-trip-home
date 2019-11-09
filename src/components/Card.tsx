@@ -21,9 +21,9 @@ export default (props: CardProps) => {
     const { createdBy, title, description } = props.itemData;
 
     return (
-        <Grid item xs={12} sm>
+        <Grid style={{ marginBottom: 10 }} item xs={12} sm={12} md={6} lg>
             <Paper>
-                <Card>
+                <Card style={{ minHeight: 300 }}>
                     <CardHeader
                         title={title}
                         subheader={`Created By ${createdBy}`}

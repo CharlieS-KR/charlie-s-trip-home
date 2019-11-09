@@ -3,7 +3,8 @@ import { connect } from 'react-redux';
 import Card from './Card';
 
 import {
-    Grid
+    Grid,
+    Button
 } from '@material-ui/core';
 
 
@@ -22,9 +23,14 @@ class CardContainer extends Component {
 
     render() {
         return (
-            <Grid container>
-                {this.props.items ? this.handleRenderCards() : ''}
-            </Grid>
+            <div>
+                <Button style={{ width: '100%', maxWidth: 350, marginBottom: 25 }} variant="contained" color="primary">
+                    Add an item
+                </Button>
+                <Grid container>
+                    {this.props.items ? this.handleRenderCards() : ''}
+                </Grid>
+            </div>
         )
     };
 };
