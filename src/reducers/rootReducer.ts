@@ -1,11 +1,15 @@
-import { combineReducers, createStore } from 'redux';
+import { combineReducers, createStore, applyMiddleware } from 'redux';
 import foodToMakeReducer from './foodToMakeReducer';
-
+import createSagaMiddleware from 'redux-saga';
+import rootSaga from '../sagas';
 
 const rootReducer = combineReducers({
     food: foodToMakeReducer
 });
 
-const store = createStore(rootReducer);
+const sagaMiddleware = createSagaMiddleware();
+const store = createStore(rootReducer, applyMiddleware(sagaMiddleware));
+
+sagaMiddleware.run(rootSaga);
 
 export default store;

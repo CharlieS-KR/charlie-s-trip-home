@@ -1,7 +1,7 @@
 import { items, actions } from '../interfaces/interfaces';
 import actionTypes from '../actions/actionTypes';
 
-const initialState: items[] = [
+const initialState: object[] = [
     {
         title: 'Chili Spaghetti',
         description: 'Got to make this Cincy classic vegie-friendly!',
@@ -21,9 +21,9 @@ const initialState: items[] = [
 
 function foodToMake(state = initialState, action: actions) {
     switch (action.type) {
-        case 'ADD_ITEM':
-            const newState = Object.assign({}, state);
-            console.log('newState', newState);
+        case actionTypes.sagadAddFoodItem:
+            const newState = [...state, action.payload];
+            return newState;
         default:
             return state;
     }

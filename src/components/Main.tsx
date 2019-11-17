@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Countdown from './Countdown';
 import CardContainer from './CardContainer.jsx';
+import AddItemForm from './AddItemForm';
 import '../styles/Main.css';
 
 import {
@@ -13,16 +14,22 @@ class Main extends Component {
     state = {
         currentIndex: 0,
         options: ['food', 'activities', 'people', 'places'],
-        currentOption: 'food'
+        currentOption: 'food',
+        addingItem: false
     }
 
     handleTabChange = (event: React.ChangeEvent<{}>, newIndex: number) => {
         const { options } = this.state;
         this.setState({
             currentIndex: newIndex,
-            currentOption: options[newIndex]
+            currentOption: options[newIndex],
+            addingItem: false
         });
     }
+
+    mutateAddingItem = (event: React.ChangeEvent<{}>) => {
+        this.setState({ addingItem: !this.state.addingItem });
+    };
 
     render() {
         return (
@@ -44,7 +51,13 @@ class Main extends Component {
                 </Paper>
 
                 <Countdown />
-                <CardContainer currentOption={this.state.currentOption} />
+                {
+                    this.state.addingItem ?
+                    <AddItemForm currentOption={this.state.currentOption} />
+                    :
+                    ''
+                }
+                <CardContainer currentOption={this.state.currentOption} mutateAddingItem={this.mutateAddingItem} />
             </section>
         );
     }
